@@ -12,7 +12,8 @@ import {
 } from '@angular/core';
 import type { Placement } from '@floating-ui/dom';
 import { activeDescendantManager } from 'ng-primitives/a11y';
-import { injectElementRef, setupInteractions } from 'ng-primitives/internal';
+import { setupInteractions } from 'ng-primitives/interactions';
+import { injectElementRef } from 'ng-primitives/internal';
 import type { NgpComboboxButton } from '../combobox-button/combobox-button';
 import type { NgpComboboxDropdown } from '../combobox-dropdown/combobox-dropdown';
 import type { NgpComboboxInput } from '../combobox-input/combobox-input';
@@ -99,7 +100,7 @@ export class NgpCombobox {
   });
 
   /** The container for the dropdown. */
-  readonly container = input<HTMLElement | null>(this.config.container, {
+  readonly container = input<HTMLElement | string | null>(this.config.container, {
     alias: 'ngpComboboxDropdownContainer',
   });
 
